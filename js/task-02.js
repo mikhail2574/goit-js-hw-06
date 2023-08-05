@@ -9,9 +9,10 @@ const ingredients = [
 
 let list = document.getElementById("ingredients");
 
-ingredients.forEach((ingredient) => {
-  let item = document.createElement("li"); // в цикле чтобы при каждой итерации создавался новый элемент
+let items = ingredients.map((ingredient) => {
+  let item = document.createElement("li");
   item.textContent = ingredient;
   item.setAttribute("class", "item");
-  list.appendChild(item);
+  return item;
 });
+list.append(...items);
